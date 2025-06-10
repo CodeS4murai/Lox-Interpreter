@@ -1,0 +1,35 @@
+// Global variable
+var globalVar = "I am global";
+
+fun greet(name) {
+  print "Hello, " + name + "!";
+}
+
+class Animal {
+  init(name) {
+    this.name = name;
+  }
+
+  speak() {
+    print this.name + " makes a noise.";
+  }
+}
+
+class Dog < Animal {
+  speak() {
+    super.speak();
+    print this.name + " barks.";
+  }
+}
+
+var dog = Dog("Buddy");
+dog.speak();
+
+greet(globalVar);
+
+fun factorial(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+
+print "Factorial of 5 is " + factorial(5);

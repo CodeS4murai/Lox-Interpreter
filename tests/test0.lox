@@ -1,0 +1,54 @@
+// Variable declaration and initializer
+var a = "global a";
+
+fun printA() {
+  print a;
+}
+
+printA(); // Should print "global a"
+
+{
+  var a = "inner a";
+  printA(); // Should still print "global a" because printA uses the global a
+}
+
+fun outer() {
+  var a = "outer a";
+
+  fun inner() {
+    print a;  // Should print "outer a" due to lexical scoping
+  }
+
+  inner();
+}
+
+outer();
+
+// Classes and inheritance example
+
+class Animal {
+  init(name) {
+    this.name = name;
+  }
+
+  speak() {
+    print this.name + " makes a noise.";
+  }
+}
+
+class Dog < Animal {
+  speak() {
+    super.speak();
+    print this.name + " barks.";
+  }
+}
+
+var dog = Dog("Rex");
+dog.speak();
+
+// This tests initializer restrictions
+class Cat {
+  init() {
+    return;  // Allowed: bare return without value
+  }
+}

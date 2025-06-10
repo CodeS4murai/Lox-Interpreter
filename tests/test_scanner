@@ -1,0 +1,13 @@
+from scanner import Scanner  
+
+source_code = 'var x = 42;\nprint x + 5;'   # Example source code to be scanned
+
+scanner = Scanner(source_code) # Create a Scanner instance with the source code
+tokens = scanner.scan_tokens() # Scan the tokens from the source code
+print(*tokens , sep="\n")
+
+
+
+
+
+    

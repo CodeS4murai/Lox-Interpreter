@@ -1,0 +1,6 @@
+fun test(a) {
+  return a;
+}
+
+print "Hello, I am global!";
+print "Answer: " + test(42);
